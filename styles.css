@@ -194,6 +194,7 @@ h1, h2 {
     }
     main {
         padding: 0.5rem;
+        margin-top: 64px;
     }
     .tab-content {
         padding: 0.5rem;
