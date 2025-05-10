@@ -20,12 +20,13 @@
             <div class="logo">
                 <a href="#home">$李币</a>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#user-guide" onclick="showTab('user-guide')">用户需知</a></li>
-                <li><a href="#products" onclick="showTab('products')">李币购买</a></li>
-                <li><a href="#exchange" onclick="showTab('exchange')">李币交易所</a></li>
-                <li><a href="#prices" onclick="showTab('prices')">李币价格</a></li>
-                <li><a href="#my-account" onclick="showTab('my-account')">我的</a></li>
+            <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#user-guide" onclick="showTab('user-guide');closeMenu()">用户需知</a></li>
+                <li><a href="#products" onclick="showTab('products');closeMenu()">李币购买</a></li>
+                <li><a href="#exchange" onclick="showTab('exchange');closeMenu()">李币交易所</a></li>
+                <li><a href="#prices" onclick="showTab('prices');closeMenu()">李币价格</a></li>
+                <li><a href="#my-account" onclick="showTab('my-account');closeMenu()">我的</a></li>
             </ul>
         </div>
     </nav>
@@ -45,7 +46,7 @@
             </ul>
         </div>
         <div id="products" class="tab-content hidden">
-            <img src="result/li poster_s.jpg" alt="李币购买" />
+            <img src="result/li poster.jpg" alt="李币购买" />
             <h2>李币购买</h2>
             <p>参与李币早期持有者计划，享受专属空投与稀缺性保障。<br>立即注册，见证数字货币新纪元！</p>
             <ul style="text-align:left;max-width:600px;margin:20px auto;">
@@ -107,6 +108,14 @@
                 tab.classList.add('hidden');
             });
             document.getElementById(tabId).classList.remove('hidden');
+        }
+        function toggleMenu() {
+            var menu = document.getElementById('navMenu');
+            menu.classList.toggle('open');
+        }
+        function closeMenu() {
+            var menu = document.getElementById('navMenu');
+            menu.classList.remove('open');
         }
         // 默认显示首页
         if(window.location.hash && document.getElementById(window.location.hash.substring(1))) {
