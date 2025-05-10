@@ -153,24 +153,44 @@ h1, h2 {
     margin-top: 4px;
 }
 
-/* 响应式设计 */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: row;
-        padding: 0.5rem;
+    .menu-toggle {
+        display: block;
     }
     .nav-menu {
-        flex-direction: row;
-        width: 100%;
-        overflow-x: auto;
-        gap: 0.5rem;
-        margin-top: 0;
-        justify-content: flex-end;
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        background: #2c3e50;
+        flex-direction: column;
+        gap: 0;
+        z-index: 2000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .nav-menu.open {
+        display: flex;
     }
     .nav-menu li a {
-        display: block;
-        padding: 0.8rem 0.6rem;
-        font-size: 0.98rem;
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #34495e;
+    }
+    .nav-container {
+        position: relative;
+        flex-direction: row;
+        padding: 0.5rem;
     }
     main {
         padding: 0.5rem;
