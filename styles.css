@@ -168,34 +168,39 @@ h1, h2 {
 
 @media (max-width: 768px) {
     .menu-toggle {
-        display: none;
+        display: block;
     }
     .nav-menu {
-        display: flex !important;
-        position: static;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        width: 100vw;
         background: #2c3e50;
-        gap: 0.2rem;
-        box-shadow: none;
-        z-index: 1000;
-        justify-content: center;
+        flex-direction: column;
+        gap: 0;
+        z-index: 9999;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+        transition: all 0.2s;
+        justify-content: flex-start;
         margin-top: 0;
     }
+    .nav-menu.open {
+        display: flex;
+    }
     .nav-menu li {
-        flex: 1 1 40%;
-        min-width: 80px;
-        text-align: center;
+        flex: unset;
+        min-width: unset;
+        text-align: left;
     }
     .nav-menu li a {
-        padding: 0.6rem 0.2rem;
-        font-size: 0.98rem;
-        border-bottom: none;
+        padding: 1.2rem 1rem;
+        font-size: 1.15rem;
+        border-bottom: 1px solid #34495e;
         color: #fff !important;
         background: none;
-        text-align: center;
-        border-radius: 4px;
+        text-align: left;
+        border-radius: 0;
         transition: background 0.2s;
         display: block;
     }
